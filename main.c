@@ -54,7 +54,7 @@ Wijzigingen:
 #define LED2                (1<<6)
 //#define LED3              (1<<7)
 
-#define F_XTAL              14745600ul      //crystal, user-specified
+#define F_XTAL              20000000ul      //crystal, user-specified
 #define F_SOSC              32768           //secondary, user-specified
 
     /* ---------------------------------------------------------
