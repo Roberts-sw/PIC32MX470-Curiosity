@@ -117,8 +117,10 @@ void CTR_init (void)
     _CP0_SET_COMPARE((CTR_SAMPLE=_CP0_GET_COUNT() )+CTR_PERIOD);
 }
 uint32_t micros (void)
-{   uint32_t plus=(_CP0_GET_COMPARE()-CTR_SAMPLE)*1000/CTR_PERIOD;
-    return Micros+plus;
+{   __builtin_disable_interrupts();
+	uint32_t res=Micros+(_CP0_GET_COMPARE()-CTR_SAMPLE)*1000/CTR_PERIOD;
+    __builtin_enable_interrupts();
+    return res;
 }
 uint32_t millis (void)  {   return Millis;  }
 
