@@ -136,8 +136,8 @@ int main(void)
 
     do{
         if(millis()-moment<-60000u) //max. interval 60s
-        {   moment+=250;            //250ms toggle
-            LATE^=LED2;
+        {   moment+=250;            //250ms
+            LATE^=LED2;             //... toggle
         }
     } while(powered_on);
 }
