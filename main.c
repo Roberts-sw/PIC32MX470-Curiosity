@@ -118,7 +118,7 @@ void CTR_init (void)
 }
 uint32_t micros (void)
 {   __builtin_disable_interrupts();
-	uint32_t res=Micros+(_CP0_GET_COMPARE()-CTR_SAMPLE)*1000/CTR_PERIOD;
+    uint32_t res=Micros+(_CP0_GET_COMPARE()-CTR_SAMPLE)*1000/CTR_PERIOD;
     __builtin_enable_interrupts();
     return res;
 }
